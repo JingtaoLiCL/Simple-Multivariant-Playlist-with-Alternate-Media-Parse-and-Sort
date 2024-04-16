@@ -35,9 +35,10 @@ g++ -std=c++17 -o playlist_parser playlist_parser.cpp -lcurl
 This will fetch the playlist, sort it by bandwidth, and output the sorted playlist into a file named sorted_playlist.m3u8.
 
 ## Configuration
+If a different playlist URL or output file name needs to be configured:\
 Modify the application directly in the playlist_parser.cpp file to change settings like the playlist URL or output filename:
 ```
-std::string url = "/path/to/playlist.m3u8";  // Replace with your playlist URL
+std::string url = "/path/to/playlist.m3u8";  // Replace with the playlist URL
 ```
 ## Output
 The output will be written to sorted_playlist.m3u8, which will be formatted as follows:
@@ -47,7 +48,8 @@ Stream details sorted by bandwidth, each followed by its respective URI
 
 A "sample_sorted_playlist.m3u8" is also included in this repo.
 
+### Time used in coding: one and half hour.
+### Time spent writing Readme.md: one hour.
+
 ## Thoughts and Further Improvements
-###Time used in coding: one and half hour.
-###Time spent writing Readme.md: one hour.
 This parser only included support the tag "EXT-X-STREAM-INF" to identify Rendition Playlist (treating other tags as other information in general) and only sorts by bandwidth. For later revisions, more supported tags needs to be added as well as adding more functions to support manipulation of different tags and its parameters.
